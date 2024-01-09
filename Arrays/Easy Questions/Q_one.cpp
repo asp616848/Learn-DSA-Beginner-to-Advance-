@@ -30,7 +30,7 @@ void largestThree(int arr[], int n, int LT[]) {
 }
 
 
-int main() {
+void main() {
     int arr[] = {10, 4, 3, 50, 23, 90};
     int LT[3];
     int n = sizeof(arr)/sizeof(arr[0]);
@@ -39,5 +39,5 @@ int main() {
         cout<<LT[i]<<" ";
     }
     cout <<endl;
-    return 0;
+    return;
 }
