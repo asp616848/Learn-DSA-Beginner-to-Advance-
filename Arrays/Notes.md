@@ -112,6 +112,13 @@
 #### recurive approach to rotate one index in one rec-call;; tripple reversal approach ;; print last k then first n-k elements.
 ---
 #### What is stable and in-Place Sorting?
+
+### Reversal Algorithm for array rotation to left by d positions.
+    ^left rotation by d == right rotation by n-d
+    ^To left shift by d elements do reversal of first d elements and then of next n-d elements    after that reverse the whole array to get the final array which has been left shifted by d.
+    ^O(N) and O(1) space
+    ^Their is a predefined rotate rotate(arr, arr + (d % n), arr + n); in cpp and similar in java as well. Here it rotates to the left. Here d is the position and n is the size.
+
 ____________________________________________________________________________________________________________
 ## SOLVE LATER- 
         * "N" Stacks in an Array
