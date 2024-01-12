@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+//QUESTION - Print all Distinct ( Unique ) Elements in given Array
 void printDistinct (vector<int> arr, int n){
     unordered_set<int> s;
     for(int i = 0; i < n; i++){

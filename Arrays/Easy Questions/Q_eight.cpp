@@ -1,12 +1,12 @@
 //QUESTION - Find the element that appears once in an array where every other element appears twice
-
+//COOL Use of bitwise operator
 #include <bits/stdc++.h>
 using namespace std;
 
 int findOnce(vector<int> arr, int n){
    int res = arr[0];
    for (int i = 1; i < n; i++){
-       res = res ^ arr[i];
+       res = res ^ arr[i];         //NOTE - XOR operator
    }
    return res;
 }
