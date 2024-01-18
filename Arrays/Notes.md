@@ -119,6 +119,12 @@
     ^O(N) and O(1) space
     ^Their is a predefined rotate rotate(arr, arr + (d % n), arr + n); in cpp and similar in java as well. Here it rotates to the left. Here d is the position and n is the size.
 
+
+---
+## Question with topic reference 
+    Sliding window method in easy questions number 10.
+    
+
 ____________________________________________________________________________________________________________
 ## SOLVE LATER- 
         * "N" Stacks in an Array
