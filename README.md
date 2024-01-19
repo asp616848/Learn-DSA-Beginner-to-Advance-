@@ -125,6 +125,7 @@
     Sliding window method in easy questions number 10.
     
 
+### Diference Array used in question 5 of intermediate
 ____________________________________________________________________________________________________________
 ## SOLVE LATER- 
         * "N" Stacks in an Array
