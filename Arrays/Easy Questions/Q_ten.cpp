@@ -12,13 +12,12 @@ void printSA(int arr[], int n, int sum){
             currSum -= arr[start];
             start++;
         }
-        
-        if(i< n){ 
-            currSum += arr[i];
-        }
         if(currSum == sum){
             cout << "We found it between indices ==>"<< start << "and" << i-1;
             return;
+        }
+        if(i< n){
+            currSum += arr[i];
         }
     }
 }

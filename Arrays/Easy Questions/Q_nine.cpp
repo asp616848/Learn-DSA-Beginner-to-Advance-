@@ -3,7 +3,7 @@
 using namespace std;
 
 //QUESTION - Leaders in an array
-
+//EZ
 void printLeads(vector<int> arr, int n){
     int max = arr[n-1];
     cout << "[" << arr[n-1] << ", ";
