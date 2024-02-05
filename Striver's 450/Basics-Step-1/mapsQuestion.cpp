@@ -26,7 +26,7 @@ int main(){
         }
         if(c.second < min){
             min = c.second;
-            mini = c.second;
+            mini = c.first;
         }
     }
     cout << "the Number " << maxi << " has occured most time  "<< max << "\n and the Number " << mini << " has occured least number of times " << min <<endl;
