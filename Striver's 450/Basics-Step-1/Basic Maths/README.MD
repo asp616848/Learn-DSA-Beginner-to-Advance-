@@ -1,0 +1,2 @@
+Print all divisors of a number and checking for prime numbers code has same logic,
+i.e. run loop till square root of that number. Cuz no other pair can be found with both number greater than square root of n. Where n is the number to check for.
