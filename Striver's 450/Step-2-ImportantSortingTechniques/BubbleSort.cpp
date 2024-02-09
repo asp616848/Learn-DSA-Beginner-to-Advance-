@@ -1,5 +1,5 @@
-#include<algorithm>
-#include<iostream>
+
+#include<iostream> //had to add these cuz i am printing
 using namespace std;
 
 void BubbleSort(int arr[], int n){
