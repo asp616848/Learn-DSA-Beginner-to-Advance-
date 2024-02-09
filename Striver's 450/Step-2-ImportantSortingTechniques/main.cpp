@@ -2,6 +2,7 @@
 #include "SelectionSort.cpp"
 #include "BubbleSort.cpp"
 #include "InsertionSort.cpp"
+#include "MergeSort.cpp"
 
 using namespace std;
 
@@ -11,8 +12,8 @@ int main(){
 
     //SelectionSort(arr, size);
     //BubbleSort(arr, size);
-    InsertionSort(arr, size);
-
+    // InsertionSort(arr, size);
+    MergeSort(arr, 0, size);
 
     //_________________________Printing Array_____________________________
     for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
