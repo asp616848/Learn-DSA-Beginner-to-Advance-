@@ -7,7 +7,7 @@ void BubbleSort(int arr[], int n){
 
     while(itr >= 0) {
         bool isSwapped = 0;
-        for(int i=0; i < n-1; i++){
+        for(int i=0; i < itr; i++){
             if(arr[i]> arr[i+1]){
                 std::swap(arr[i], arr[i+1]);
                 isSwapped = 1;
