@@ -5,6 +5,7 @@
 #include "MergeSort.cpp"
 #include "RecursiveBubble.cpp"
 #include "RecursiveInsertion.cpp"
+#include "QuickSort.cpp"
 using namespace std;
 
 int main(){
@@ -16,7 +17,8 @@ int main(){
     // InsertionSort(arr, size);
     //MergeSort(arr, 0, size);
     //RecursiveBubble(arr, size);
-    RecursiveInsertion(arr, 0, size);
+    //RecursiveInsertion(arr, 0, size);
+    //QuickSort(arr, 0, size-1);
 
     //_________________________Printing Array_____________________________
     for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
