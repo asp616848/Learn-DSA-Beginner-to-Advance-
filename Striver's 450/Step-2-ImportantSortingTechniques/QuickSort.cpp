@@ -1,36 +1,25 @@
-#include <iostream>
-#include <cstring>
+#include <algorithm>
 
-class words {
-private:
-    char* word;
-
-public:
-    words(const char* w) {
-        word = new char[strlen(w) + 1];
-        strcpy(word, w);
+int partition(int arr[], int low, int high){
+    int pivot = arr[low];
+    int i = low;
+    int j = high;
+    while(i < j){
+        while(i<= high-1 && arr[i]<= pivot){
+            i++;
+        }
+        while (j >= low+1 && arr[j] > pivot){
+            j--;
+        }
+        if(i<j)std::swap(arr[i], arr[j]);
     }
-
-    void printWord() {
-        std::cout << word << std::endl;
+    std::swap(arr[low], arr[j]);
+    return j;
+}
+void QuickSort(int arr[], int left, int right){
+    if(left < right){
+        int pIndex = partition(arr, left, right);
+        QuickSort(arr, left, pIndex-1);
+        QuickSort( arr, pIndex+1, right);
     }
-
-    ~words() {
-        delete[] word; // Release memory allocated for 'word'
-        std::cout<< "delete word deconstruct";
-    }
-};
-
-int main() {
-    words* w4 = new words("Plaksha"); // Dynamic allocation
-    words* w5 = new words(" University"); // Dynamic allocation
-    std::cout<< "delete word ";
-    w4->printWord();
-    std::cout<< "delete word";
-    w5->printWord();
-    
-    delete w4; // Release memory allocated for 'w4'
-    delete w5; // Release memory allocated for 'w5'
-
-    return 0;
 }
