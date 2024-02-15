@@ -3,6 +3,12 @@
         "iostream": "cpp",
         "algorithm": "cpp",
         "ostream": "cpp",
-        "main.C": "cpp"
+        "main.C": "cpp",
+        "*.tcc": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "string_view": "cpp",
+        "span": "cpp"
     }
 }
