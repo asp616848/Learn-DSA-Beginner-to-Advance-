@@ -9,6 +9,8 @@
         "unordered_map": "cpp",
         "unordered_set": "cpp",
         "string_view": "cpp",
-        "span": "cpp"
+        "span": "cpp",
+        "vector": "cpp",
+        "tempCodeRunnerFile.C": "cpp"
     }
 }
