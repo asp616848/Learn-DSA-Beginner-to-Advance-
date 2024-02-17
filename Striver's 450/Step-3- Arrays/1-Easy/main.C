@@ -4,6 +4,7 @@
 #include "moveZerosToEnd.cpp"
 #include "UnionSorted.cpp"
 #include "RemoveDuplicates.cpp"
+#include "ShiftleftShiftright.cpp"
 using namespace std;
 
 int main(){
@@ -39,6 +40,20 @@ int main(){
     for ( int i = 0; i< e.size(); i++){
         cout << e[i] << " ,";
     }
+
+    vector<int> f = {1, 2, 3, 4, 5, 6, 7, 8};
+    vector<int> g = {1, 2, 3, 4, 5, 6, 7, 8};
+    shiftRight(f, 5);
+    shiftLeft(g, 4);
+    cout<< "\n the array shift Right by 5:  "; 
+    for ( int i = 0; i< f.size(); i++){
+        cout << f[i] << " ,";
+    }
+    cout<< "\n the array shift Left by 4:  "; 
+    for ( int i = 0; i< g.size(); i++){
+        cout << g[i] << " ,";
+    }
+
 
     cout<< endl;
 }
