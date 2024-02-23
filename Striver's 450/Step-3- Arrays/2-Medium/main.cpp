@@ -4,6 +4,7 @@
 #include "TwoSum.cpp"
 #include "findTheMajorityElementinON.cpp"
 #include "kadanesAlgorithm.cpp"
+#include "stocksBuySell.cpp"
 using namespace std;
 
 int main(){
@@ -33,5 +34,10 @@ int main(){
     int *result = findMaxSumSubArray(array, size);
     std::cout << "Maximum sum is " << result[0] << " from index " << result[1] << " to " << result[2] << std::endl;
     delete[] result; // Don't forget to free the dynamically allocated memory
+    
+    int arrB[] = {7,1,5,3,6,4};
+    int num = sizeof(arrB)/ sizeof(arrB[0]);
+    printBuySell(arrB, num);
+
     return 0;
 }
