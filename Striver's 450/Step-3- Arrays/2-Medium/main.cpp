@@ -40,7 +40,7 @@ int main(){
     int num = sizeof(arrB)/ sizeof(arrB[0]);
     printBuySell(arrB, num);
 
-    int arreh[] = {1,2,3,-1,-2,-3};
+    int arreh[] = {1,-1,2,3,-2,-3};
     int sizzeh = sizeof(arreh)/sizeof(arreh[0]);
     cout << "\n\n\n\n" << sizzeh << "\n\n\n\n\n";
     vector<int> arrehh = rearrangeBySign(arreh, sizzeh);
@@ -49,6 +49,15 @@ int main(){
         cout << arrehh[k] << "  ,";
     }
     cout << endl;
+    // int arreh1[] = {1,-1,2,3,-2,-3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
+    // int sizzeh1 = sizeof(arreh1)/sizeof(arreh1[0]);
+    // cout << "\n\n\n\n" << sizzeh1 << "\n\n\n\n\n";
+    // vector<int> arrehh1 = rearrangeBySign2(arreh1, sizzeh1);
+    // cout<< "\nREARRANGED BY SIGN: \n";
+    // for(int k = 0; k < sizzeh1; k++){
+    //     cout << arrehh1[k] << "  ,";
+    // }
+    // cout << endl;
 
     return 0;
 }
