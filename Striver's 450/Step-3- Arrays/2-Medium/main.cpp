@@ -5,6 +5,7 @@
 #include "findTheMajorityElementinON.cpp"
 #include "kadanesAlgorithm.cpp"
 #include "stocksBuySell.cpp"
+#include "rearrangeBySign.cpp"
 using namespace std;
 
 int main(){
@@ -38,6 +39,16 @@ int main(){
     int arrB[] = {7,1,5,3,6,4};
     int num = sizeof(arrB)/ sizeof(arrB[0]);
     printBuySell(arrB, num);
+
+    int arreh[] = {1,2,3,-1,-2,-3};
+    int sizzeh = sizeof(arreh)/sizeof(arreh[0]);
+    cout << "\n\n\n\n" << sizzeh << "\n\n\n\n\n";
+    vector<int> arrehh = rearrangeBySign(arreh, sizzeh);
+    cout<< "\nREARRANGED BY SIGN: \n";
+    for(int k = 0; k < sizzeh; k++){
+        cout << arrehh[k] << "  ,";
+    }
+    cout << endl;
 
     return 0;
 }
