@@ -1,51 +1,73 @@
 #include <iostream>
 using namespace std;
-
-class Cuboid {
+class person{
+    string firstname;
+    string lastname;
+    char middleInitial;
+    string title;
+    
+    protected:
+        void modifyTitle(const string &); //the argument can't be touched
     public:
-        int length,width,height;
-        Cuboid() {}
-        Cuboid(int len, int wid, int hei): length(len),width(wid),height(hei) {}
-        void display()
-        {
-            cout<<"The Length, Breadth, Height of a cuboid are"<<endl;
-            cout<<length<<" "<<width<<" "<<height<<endl;
-        }
+        person();
+        person(const string &, const string &, char, const string &);
+        ~person(){cout << "Destructor called";}
+        const string & getFirstName() const{return firstname;}
+        const string & getLastName() const{return lastname;}
+        const string & getTitle() const{return title;}
+        void print() const;
+        void IsA() const;
+        void greeting(const string &) const;
 };
-
-class CuboidVol:public Cuboid{
-    public:
-        void read_input()
-        {
-            length = 0; width = 0; height = 0;
-            cout<<"Enter the value of Lenght, Width, Height between 0 to 100"<<endl;
-            if(length>=0 && length<=100 || width>=0 && width<=100 || height>=0 && height<=1000)
-            {
-                cin>>length>>width>>height;
-            }
-            else
-            {
-                cout<<"Enter the values within the Range"<<endl;
-            }
-        }
-        void display()
-        {
-            Cuboid::display();
-            cout<<length*width*height<<endl;
-        }
-};
-
-
-int main() 
-{
-    int n;
-    cout<<"Enter the number of cases "<<endl;
-    cin>>n;
-    CuboidVol c[n];
-    for (int i = 0; i < n; i++)
-    {
-        c[i].read_input();
-        c[i].display();
-    }
-    return 0;
+void person::IsA() const{
+    cout<< "Person\n";
 }
+void person::modifyTitle(const string & Title){ //why initializer list not working here
+    title = Title;
+}
+
+//QUESTION -  why in multilevel inheritence the base's protected is private in all the level classes
+
+class student: public person{
+    float gpa; // why can't we initialize vars here
+    //float need not be passed as reference as float only has 4 bites of memory unlike objects like string which is memory intense
+    string currentCourse;
+    const string studentId;
+    static int numStudents;
+    public:
+        student();
+
+        student(const string & firstName, const string &lastName, char middle, const string &Title,
+        float GPA, const string & currentcourse, const string & studentID)
+        :person(firstName, lastName, middle, Title),gpa(GPA), currentCourse(currentcourse),
+        studentId(studentID){}
+
+        ~student(){cout << "Destructor called for student";}
+        float getGpa() const;
+        const string & getCurrentCourse() const;
+        const string & getStudentID() const;
+        static int getNumberStudents();
+        void setCurrentCourse(const string &);
+        void earnPhD();
+        void print() const;
+        void IsA() const;
+};
+class test{};
+
+void student::IsA() const{
+    cout<< "Student\n";
+}
+void student::earnPhD(){
+    modifyTitle("Dr.");
+}
+
+int main(){
+    student s1("Abhi", "Jeet", '_', "Mr.", 3.5, "C++", "1234");
+    student s2(s1);
+    student* s = new student[4]; //array of studs
+    person * p = new person;     // one person
+    //delete s, p;
+    p = new student;  //NOTE -  student "is a" person . Now person classes will be considered over student since OG pointer type is person. But we can change this, will see in next class.
+}
+
+//FIXME - LATE BINDING
