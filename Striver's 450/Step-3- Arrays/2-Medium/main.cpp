@@ -6,6 +6,7 @@
 #include "kadanesAlgorithm.cpp"
 #include "stocksBuySell.cpp"
 #include "rearrangeBySign.cpp"
+#include "nextPermutation.cpp"
 using namespace std;
 
 int main(){
@@ -58,6 +59,11 @@ int main(){
     //     cout << arrehh1[k] << "  ,";
     // }
     // cout << endl;
+
+
+    int h[] = {2, 1, 5, 4, 3, 0, 0};
+    nextPermutation(h, 7);
+    cout<< endl;
 
     return 0;
 }

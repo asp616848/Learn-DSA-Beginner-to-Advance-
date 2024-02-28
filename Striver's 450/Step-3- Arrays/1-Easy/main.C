@@ -54,6 +54,4 @@ int main(){
         cout << g[i] << " ,";
     }
 
-
-    cout<< endl;
 }
