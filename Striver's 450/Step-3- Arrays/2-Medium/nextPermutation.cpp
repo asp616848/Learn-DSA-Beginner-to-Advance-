@@ -24,7 +24,7 @@ void nextPermutation(int arr[], int n){
         }
     }
     std::swap(arr[i], arr[min]);
-    // reverse(arr, i+1, n-1);
+    // reverse(arr, i+1, n-1); I LATER REALIZED THAT I CAN USE THE INBUILT FUNCTION TO REVERSE THE ARRAY
     reverse(arr + i + 1, arr + n);
     cout << "The next permutation is: \n";
     for (int i = 0; i < n; i++){

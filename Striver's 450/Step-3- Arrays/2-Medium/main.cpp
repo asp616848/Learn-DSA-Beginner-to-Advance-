@@ -7,6 +7,7 @@
 #include "stocksBuySell.cpp"
 #include "rearrangeBySign.cpp"
 #include "nextPermutation.cpp"
+#include "leader.cpp"
 using namespace std;
 
 int main(){
@@ -43,7 +44,7 @@ int main(){
 
     int arreh[] = {1,-1,2,3,-2,-3};
     int sizzeh = sizeof(arreh)/sizeof(arreh[0]);
-    cout << "\n\n\n\n" << sizzeh << "\n\n\n\n\n";
+    cout << "\n" << sizzeh << " :size of array to rearrange";
     vector<int> arrehh = rearrangeBySign(arreh, sizzeh);
     cout<< "\nREARRANGED BY SIGN: \n";
     for(int k = 0; k < sizzeh; k++){
@@ -64,6 +65,11 @@ int main(){
     int h[] = {2, 1, 5, 4, 3, 0, 0};
     nextPermutation(h, 7);
     cout<< endl;
+
+
+    int arr2[] = {16, 17, 4, 3, 5, 2};
+    int n2 = sizeof(arr2) / sizeof(arr2[0]);
+    printLeaders(arr2, n2);
 
     return 0;
 }
