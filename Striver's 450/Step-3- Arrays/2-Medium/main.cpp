@@ -8,6 +8,8 @@
 #include "rearrangeBySign.cpp"
 #include "nextPermutation.cpp"
 #include "leader.cpp"
+#include "LongestConsecutiveSequence.cpp"
+#include "SetMatrixZero.cpp"
 using namespace std;
 
 int main(){
@@ -70,6 +72,13 @@ int main(){
     int arr2[] = {16, 17, 4, 3, 5, 2};
     int n2 = sizeof(arr2) / sizeof(arr2[0]);
     printLeaders(arr2, n2);
+
+    int arr3[] = {100, 4, 200, 1, 3, 2};
+    int n3 = sizeof(arr3) / sizeof(arr3[0]);
+    cout  << "This is the length of the longest consecutive seq => "<< LongestCOnsecutiveSequence(arr3, n3) << endl;
+
+    vector<vector<int>> a = {{1, 2, 3, 4}, {5, 0, 7, 8}, {0, 10, 11, 12}, {13, 14, 15, 16}};
+    SetMatrixZeroAndPrint(a);
 
     return 0;
 }
