@@ -11,6 +11,7 @@
 #include "LongestConsecutiveSequence.cpp"
 #include "SetMatrixZero.cpp"
 #include "rotateArrayBy90.cpp"
+#include "spiralMatrixPrint.cpp"
 using namespace std;
 
 int main(){
@@ -88,6 +89,9 @@ int main(){
                         {13, 14, 15, 16}};
     rotateArrayBy90(arr4, 4, 4);
 
+
+    vector<vector<int>> arr5 = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
+    spiralMatrixPrint(arr5);
 
     return 0;
 }
