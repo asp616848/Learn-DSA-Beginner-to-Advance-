@@ -1,12 +1,11 @@
 #include <vector>
 #include <iostream>
-using namespace std;
+using namespace std; // best time and space complexity is O(n*m) and O(m*n) respectively
 void spiralMatrixPrint(vector<vector<int>> arr){
     int top, right, bottom, left;
-    int n = arr.size();
     top = 0;
-    right = n-1;
-    bottom = n-1;
+    right = arr.size()+1;
+    bottom = arr[0].size()-1;
     left = 0;
     cout<< "[" << endl;
 
@@ -19,6 +18,9 @@ void spiralMatrixPrint(vector<vector<int>> arr){
             cout<< arr[i][right] << "  ,";
         }
         right--;
+
+
+//the if statements are for the edge cases where the top and bottom or left and right are the same specially in matrixes with one row or column
 
         if(top <= bottom) // to avoid printing the same row twice
         {
