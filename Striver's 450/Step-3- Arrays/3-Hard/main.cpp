@@ -1,6 +1,7 @@
 #include "pascal's.cpp"
 #include <iostream>
 #include "4sum.cpp"
+#include "XorK.cpp"
 using namespace std;
 
 int main(){
@@ -23,5 +24,9 @@ int main(){
         cout << endl;
     }
 
+    int arr[] = {4, 2, 2, 6, 4};
+    int k = 6;
+    int size = sizeof(arr)/sizeof(arr[0]);
+    cout <<" Number of Subarrays with XOR k is: "<< XorK(arr, size, k) << endl;
     return 0;
 }
