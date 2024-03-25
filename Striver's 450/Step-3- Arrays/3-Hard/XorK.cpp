@@ -6,14 +6,12 @@ int XorK(int (&arr)[], int size, int k){
     int XorSum = 0;
     for(int i=0; i<size; i++){
         XorSum ^= arr[i];
-
+        
         if(XorSum == k){
             count++;
         }
-        if(mp.find(XorSum^k) != mp.end()){
-            count += mp[XorSum ^ k];
-        }
-        mp[arr[i]]++;
+        count += mp[XorSum ^ k]; //here No if statement required since if XorSum ^ k is not present in map then it will return 0
+        mp[XorSum]++;
     }
-    return count;  
+    return count;
 }
