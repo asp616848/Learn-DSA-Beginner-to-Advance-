@@ -3,6 +3,7 @@
 #include "4sum.cpp"
 #include "XorK.cpp"
 #include "mergeOverlapSA.cpp"
+#include "mergeSorted.cpp"
 using namespace std;
 
 int main(){
@@ -30,7 +31,7 @@ int main(){
     int size = sizeof(arr)/sizeof(arr[0]);
     cout <<" Number of Subarrays with XOR k is: "<< XorK(arr, size, k) << endl;
 
-    vector<vector<int>> arr1 = {{1, 3}, {2, 6}, {8, 10}, {15, 18}, {1, 3}, {2, 6}, {8, 10}, {15, 18}, {1, 3}, {2, 6}, {8, 10}, {15, 18}, {1, 3}, {2, 6}, {8, 10}, {15, 18}, {1, 3}, {2, 6}, {8, 10}, {15, 18}};
+    vector<vector<int>> arr1 = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
 
     vector<vector<int>> res1 = mergeOverlaps(arr1);
     for(int i = 0; i < res1.size(); i++){
@@ -38,6 +39,18 @@ int main(){
             cout << res1[i][j] << " ";
         }
         cout << endl;
+    }
+    cout << endl;
+
+    vector<int> a1 = {1, 3, 5, 7};
+    vector<int> b = {0, 2, 6, 8, 9};
+    mergeSorted(a1, b);
+    cout << "After Merging: ";
+    for(int i = 0; i < a1.size(); i++){
+        cout << a1[i] << " ";
+    }
+    for(int i = 0; i < b.size(); i++){
+        cout << b[i] << " ";
     }
 
     return 0;
