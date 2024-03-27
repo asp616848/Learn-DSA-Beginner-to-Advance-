@@ -29,10 +29,9 @@ void mergeSorted(vector<int> &a, vector<int> &b){
             i++;
             j++;
         }
-        gap = ceil(gap/2.0);
-
         if (gap <= 1){
             break;
         }
+        gap = ceil(gap/2.0);
     }
 }
