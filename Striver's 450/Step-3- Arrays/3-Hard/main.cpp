@@ -4,6 +4,7 @@
 #include "XorK.cpp"
 #include "mergeOverlapSA.cpp"
 #include "mergeSorted.cpp"
+#include "countInversions.cpp"
 using namespace std;
 
 int main(){
@@ -52,6 +53,15 @@ int main(){
     for(int i = 0; i < b.size(); i++){
         cout << b[i] << " ";
     }
+
+
+    int array[] = {5,4,3,2,1};
+    int count = recurssive(array, 0, 4);
+    for(int i = 0; i < 5; i++){
+        cout << array[i] << " ";
+    }
+    cout << "Number of Inversions: " << count << endl;
+    cout << endl;
 
     return 0;
 }
