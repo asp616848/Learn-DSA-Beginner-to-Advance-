@@ -5,6 +5,8 @@
 #include "mergeOverlapSA.cpp"
 #include "mergeSorted.cpp"
 #include "countInversions.cpp"
+#include "MaxProductSubarray.cpp"
+
 using namespace std;
 
 int main(){
@@ -62,6 +64,9 @@ int main(){
     }
     cout << "Number of Inversions: " << count << endl;
     cout << endl;
+
+    int arr2[] = {6, -3, 10, 0, 2};
+    cout << "Max Product Subarray: " << maxProdSubarray(arr2,  sizeof(arr2)/ sizeof(arr2[0])) << endl;
 
     return 0;
 }

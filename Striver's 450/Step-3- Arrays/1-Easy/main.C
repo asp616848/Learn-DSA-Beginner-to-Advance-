@@ -5,6 +5,7 @@
 #include "UnionSorted.cpp"
 #include "RemoveDuplicates.cpp"
 #include "ShiftleftShiftright.cpp"
+
 using namespace std;
 
 int main(){
@@ -53,5 +54,6 @@ int main(){
     for ( int i = 0; i< g.size(); i++){
         cout << g[i] << " ,";
     }
+
 
 }
