@@ -2,6 +2,7 @@
 #include "BinarySearch.cpp"
 #include "findLastOccurence.cpp"
 #include "numberOfOccurences.cpp"
+#include "searchElementRotated.cpp"
 using namespace std;
 
 int main(){
@@ -14,4 +15,7 @@ int main(){
     cout << "Found last occurence at the element no. " << findLastOcc(arr2, sizeof(arr2)/ sizeof(arr2[0]), 8) << endl;
 
     cout << "Number of occurences of 8 is " << findOccurences(arr2, sizeof(arr2)/ sizeof(arr2[0]), 8) << endl;
+
+    int arr3[] = {4,5,6,7,0,1,1,1,2};
+    cout << "Element found at index " << searchInRotated(arr3, sizeof(arr3)/ sizeof(arr3[0]), 0) << endl;
 }

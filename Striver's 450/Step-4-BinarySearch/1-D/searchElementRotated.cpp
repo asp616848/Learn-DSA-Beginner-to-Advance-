@@ -6,39 +6,22 @@ int searchInRotated(int arr[], int n, int x){
     while(s<= e){
         int mid = s + (e-s)/2;
         if(arr[mid] == x){
-            return mid;
-        }// try writing below, if u can't then answer below
-        
+            return mid+1;
+        }
+        if( arr[s] < arr[mid]){ //left part is sorted
+            if(x < arr[mid] && x >=arr[s]){
+                e = mid-1;
+            }else{
+                s = mid+1;
+            }
+        }
+        else{ // right part is sorted
+            if(x > arr[mid] && x <= arr[e]){
+                s = mid+1;
+            }else{
+                e = mid-1;
+            }
+        }
     }
+    return s+1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // if (arr[s] <= arr[mid]) {
-        //     if (x >= arr[s] && x < arr[mid]) {
-        //         e = mid - 1;
-        //     } else {
-        //         s = mid + 1;
-        //     }
-        // } else {
-        //     if (x > arr[mid] && x <= arr[e]) {
-        //         s = mid + 1;
-        //     } else {
-        //         e = mid - 1;
-        //     }
-        // }
