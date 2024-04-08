@@ -4,6 +4,7 @@
 #include "numberOfOccurences.cpp"
 #include "searchElementRotated.cpp"
 #include "FindMinimum.cpp"
+#include "findNonRepeating.cpp"
 using namespace std;
 
 int main(){
@@ -23,4 +24,6 @@ int main(){
     int arr4[] = {4,5,6,7,8,9,10,1,2,3};
     cout << "Minimum element is at index " << findMinimum(arr4, sizeof(arr4)/ sizeof(arr4[0])) << endl;
 
+    int arr5[] = {1,1,2,2,3,4,4,5,5,6,6,7,7,8,8,9,9};
+    cout << "Non repeating element is " << findNonRepeating(arr5, sizeof(arr5)/ sizeof(arr5[0])) << endl;
 }
