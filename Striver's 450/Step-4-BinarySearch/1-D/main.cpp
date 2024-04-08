@@ -3,6 +3,7 @@
 #include "findLastOccurence.cpp"
 #include "numberOfOccurences.cpp"
 #include "searchElementRotated.cpp"
+#include "FindMinimum.cpp"
 using namespace std;
 
 int main(){
@@ -16,6 +17,10 @@ int main(){
 
     cout << "Number of occurences of 8 is " << findOccurences(arr2, sizeof(arr2)/ sizeof(arr2[0]), 8) << endl;
 
-    int arr3[] = {4,5,6,7,0,1,1,1,2};
-    cout << "Element found at index " << searchInRotated(arr3, sizeof(arr3)/ sizeof(arr3[0]), 0) << endl;
+    int arr3[] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,4,5,6,7,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
+    cout << "Element found at index " << searchInRotated(arr3, sizeof(arr3)/ sizeof(arr3[0]), 1) << endl;
+
+    int arr4[] = {4,5,6,7,8,9,10,1,2,3};
+    cout << "Minimum element is at index " << findMinimum(arr4, sizeof(arr4)/ sizeof(arr4[0])) << endl;
+
 }

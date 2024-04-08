@@ -4,6 +4,9 @@ int searchInRotated(int arr[], int n, int x){
     int e = n-1;
 
     while(s<= e){
+        while(arr[s] == arr[e] && s!=e){
+            s++;
+        }
         int mid = s + (e-s)/2;
         if(arr[mid] == x){
             return mid+1;
