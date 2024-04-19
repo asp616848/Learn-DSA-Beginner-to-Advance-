@@ -5,9 +5,12 @@
 #include "searchElementRotated.cpp"
 #include "FindMinimum.cpp"
 #include "findNonRepeating.cpp"
+#include "PeakElement.cpp"
 using namespace std;
 
 int main(){
+    cout<< "1- based indexing is used in the following examples while printing\n"
+
     int arr[] = {1,2,3,4,5,7,8};
     cout<<"Found at the element no. "<< findElement(arr,sizeof(arr)/ sizeof(arr[0]), 5) << endl;
     cout << " Found lower bound at the element no." << findLowerBound(arr, sizeof(arr)/ sizeof(arr[0]), 6) << endl;
@@ -26,4 +29,7 @@ int main(){
 
     int arr5[] = {1,1,2,2,3,4,4,5,5,6,6,7,7,8,8,9,9};
     cout << "Non repeating element is " << findNonRepeating(arr5, sizeof(arr5)/ sizeof(arr5[0])) << endl;
+
+    int arr6[] = {1,2,3,8,4,5,7};
+    cout << "Peak element is at index " << findPeak(arr6, sizeof(arr6)/ sizeof(arr6[0])) << endl;
 }
