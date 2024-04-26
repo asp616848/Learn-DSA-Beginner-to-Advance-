@@ -4,7 +4,7 @@ int findPeak(int arr[], int size){
     while(s <= e){
         int mid = s + (e-s)/2;
         if(arr[mid] > arr[mid+1] && arr[mid] > arr[mid-1]){
-            return mid;
+            return mid+1;
         }
         else if (arr[mid] < arr[mid+1]){
             s = mid+1;
@@ -13,5 +13,5 @@ int findPeak(int arr[], int size){
             e = mid-1;
         }
     }
-    return s;
+    return s+1;
 }
