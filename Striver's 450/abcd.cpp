@@ -12,47 +12,47 @@ public:
     Graph(int nodes);
     void addEdge(int v, int w);
     void printGraph();
-    void BFS(int s);
-    void DFS(int s);
+    void BFS(int data);
+    void DFS(int data);
 };
 
-void Graph :: BFS(int s) {
-    bool *removed = new bool[nodes];
+void Graph :: BFS(int data) {
+    bool *removed = new bool[nodes];// array of bools to store queue removed nodes
     for(int i = 0; i < nodes; i++) {
         removed[i] = false;
     }
     queue<int> q;
-    removed[s] = true;
-    q.push(s);
+    removed[data] = true;
+    q.push(data);
     while(!q.empty()) {
-        s = q.front();
-        cout << s << " ";
+        data = q.front();
+        cout << data << " ";
         q.pop();
-        for(int i = 0; i < mat[s].size(); i++) {
-            if(!removed[mat[s][i]]) {
-                removed[mat[s][i]] = true;
-                q.push(mat[s][i]);
+        for(int i = 0; i < mat[data].size(); i++) {
+            if(!removed[mat[data][i]]) {
+                removed[mat[data][i]] = true;
+                q.push(mat[data][i]);
             }
         }
     }
 }
 
-void Graph :: DFS(int s) {
-    bool *removed = new bool[nodes];
+void Graph :: DFS(int data) { //copy of BFS but stack logic implements DFS(as last in first out)
+    bool *removed = new bool[nodes]; // array of bools to store stack removed nodes
     for(int i = 0; i < nodes; i++) {
         removed[i] = false;
     }
-    stack<int> st;
-    removed[s] = true;
-    st.push(s);
-    while(!st.empty()) {
-        s = st.top();
-        cout << s << " ";
-        st.pop();
-        for(int i = 0; i < mat[s].size(); i++) {
-            if(!removed[mat[s][i]]) {
-                removed[mat[s][i]] = true;
-                st.push(mat[s][i]);
+    stack<int> s;
+    removed[data] = true;
+    s.push(data);
+    while(!s.empty()) {
+        data = s.top();
+        cout << data << " ";
+        s.pop();
+        for(int i = 0; i < mat[data].size(); i++) {
+            if(!removed[mat[data][i]]) {
+                removed[mat[data][i]] = true;
+                s.push(mat[data][i]); // pushes all unvisited edges in stack
             }
         }
     }
