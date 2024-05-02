@@ -5,10 +5,10 @@
 // consecutive days just before the given day, for which the price of the stock on the given day is
 // less than or equal to its price on the current day.
 // For example, if an array of 7 days prices is given as {100, 80, 60, 70, 60, 75, 85}, then the span
-// values for corresponding 7 days are {1, 1, 1, 2, 2, 4, 6}.
+// values for corresponding 7 days are {1, 1, 1, 2, 1, 4, 6}.
 // Example 1:
 // Input: N = 7, price[] = [100 80 60 70 60 75 85]
-// Output: 1 1 1 2 2 4 6
+// Output: 1 1 1 2 1 4 6
 // Explanation:
 // Traversing the given input span
 // 100 is greater than equal to 100 and there are no more elements behind it so the span is 1,
@@ -26,8 +26,11 @@ vector<int> calculateSpan(int price[], int n){
     vector<int> ans(n,1);
     for(int i=0; i<n; i++){
         for(int j=i-1; j>=0; j--){
-            if(price[j] >= price[i]){
+            if(price[j] <= price[i]){
                 ans[i]++;
+            }
+            else if(price[j] > price[i]){
+                break;
             }
         }
     }
