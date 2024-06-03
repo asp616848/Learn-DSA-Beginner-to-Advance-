@@ -46,4 +46,19 @@ int maxDistMinimized(vector<int> arr, int k){
 }
 
 int main() {
+    int n, k;
+    cout << "Enter the number of gas stations: ";
+    cin >> n;
+    vector<int> arr(n);
+    cout << "Enter the positions of the gas stations: ";
+    for(int i = 0; i < n; i++){
+        cin >> arr[i];
+    }
+    cout << "Enter the number of additional stations to add: ";
+    cin >> k;
+
+    int result = maxDistMinimized(arr, k);
+    cout << "The minimized maximum distance is: " << result << endl;
+
+    return 0;
 }
