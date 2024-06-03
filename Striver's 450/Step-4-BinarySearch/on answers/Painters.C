@@ -10,9 +10,7 @@ bool check(vector<int> arr, int mid, int k) {
             // Current painter cannot take more load, use a new painter
             k--;
             currentLoad = arr[i];
-
             // If more painters are required than available, return false
-            
         } else {
             currentLoad += arr[i];
         }
