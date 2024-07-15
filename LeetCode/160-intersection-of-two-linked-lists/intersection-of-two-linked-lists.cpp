@@ -15,27 +15,11 @@ public:
 
         ListNode* a = headA;
         ListNode* b = headB;
-        std::unordered_map<ListNode*, int> map;
-
-        while (a != nullptr || b != nullptr) {
-            if (a != nullptr) {
-                if (map.find(a) != map.end()) {
-                    return a;
-                } else {
-                    map[a]++;
-                }
-                a = a->next;
-            }
-
-            if (b != nullptr) {
-                if (map.find(b) != map.end()) {
-                    return b;
-                } else {
-                    map[b]++;
-                }
-                b = b->next;
-            }
+        
+        while(a!=b){
+            a= a != nullptr ? a = a->next : headB;
+            b= b != nullptr ? b = b->next : headA;
         }
-        return nullptr;
+        return a;
     }
 };
