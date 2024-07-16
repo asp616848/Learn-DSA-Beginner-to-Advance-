@@ -1,35 +1,37 @@
-
 class Solution {
 public:
-    bool wordPattern(string pattern, string s) {
+    bool wordPattern(std::string pattern, std::string s) {
+        std::unordered_map<char, std::string> mp;
+        std::unordered_map<std::string, char> mp_reverse;
+        std::stringstream ss(s);
+        std::string word;
 
-        stringstream ss(s);
-        string word;
-        unordered_map<string,char>mpp1;
-        unordered_map<char,char>mpp2;
-        
-        string s1,s2;
+        int i = 0;
+        for (char c : pattern) {
+            if (!(ss >> word)) {  // Extract word from stream
+                return false;  // If we run out of words before pattern ends
+            }
 
-        char i = 'a';
-
-        while(ss >> word)
-        {
-            if(mpp1.find(word) == mpp1.end()) mpp1[word] = i++;
-            
-            s1.push_back(mpp1[word]);     
+            // Check if the pattern character has already been mapped to a word
+            if (mp.find(c) != mp.end()) {
+                if (mp[c] != word) {
+                    return false;
+                }
+            } else {
+                // Check if the word has already been mapped to a different pattern character
+                if (mp_reverse.find(word) != mp_reverse.end() && mp_reverse[word] != c) {
+                    return false;
+                }
+                mp[c] = word;
+                mp_reverse[word] = c;
+            }
+            i++;
         }
 
-        i = 'a';
-
-        for(auto &it : pattern)
-        {
-            if(mpp2.find(it) == mpp2.end()) mpp2[it] = i++;
-        
-            s2.push_back(mpp2[it]);
+        // Check if there are extra words left in the stream
+        if (ss >> word) {
+            return false;  // There are more words than pattern characters
         }
-
-        if(s1!=s2) return false;
-
 
         return true;
     }
