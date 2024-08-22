@@ -1,27 +1,36 @@
-
 class Solution {
 public:
+    int getLeftLength(int a, unordered_map<int, bool>& hm) {
+        if (!hm[a]) {
+            return 0;
+        }
+        hm[a] = false;
+        return 1 + getLeftLength(a - 1, hm);
+    }
+
+    int getRightLength(int a, unordered_map<int, bool>& hm) {
+        if (!hm[a]) {
+            return 0;
+        }
+        hm[a] = false;
+        return 1 + getRightLength(a + 1, hm);
+    }
+
     int longestConsecutive(vector<int>& nums) {
-        unordered_set<int> numSet(nums.begin(), nums.end());
-        int maxLength = 0;
-
-        for (int num : numSet) {
-            // Check if 'num' is the start of a sequence
-            if (numSet.find(num - 1) == numSet.end()) {
-                int currentNum = num;
-                int currentLength = 1;
-
-                // Count the length of the sequence
-                while (numSet.find(currentNum + 1) != numSet.end()) {
-                    currentNum += 1;
-                    currentLength += 1;
-                }
-
-                // Update the maximum length found
-                maxLength = max(maxLength, currentLength);
+        unordered_map<int, bool> hm;
+        int maxi = 0;
+        for (int num : nums) {
+            hm[num] = true;
+        }
+        
+        for (int num : nums) {
+            if (hm[num]) {
+                int leftLen = getLeftLength(num - 1, hm);
+                int rightLen = getRightLength(num + 1, hm);
+                int totalLen = leftLen + 1 + rightLen; // Including current num
+                maxi = max(totalLen, maxi);
             }
         }
-
-        return maxLength;
+        return maxi;
     }
 };
