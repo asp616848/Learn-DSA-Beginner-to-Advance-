@@ -1,31 +1,27 @@
+
 class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
-        unordered_map<int, bool> hm;
-        int maxi = 0;
+        unordered_set<int> numSet(nums.begin(), nums.end());
+        int maxLength = 0;
 
-        // Populate the map with all numbers
-        for (int num : nums) {
-            hm[num] = true;
-        }
-        
-        // Iterate through each number and process only if it's the start of a sequence
-        for (int num : nums) {
-            if (!hm[num - 1]) {  // Only start if `num` is the start of a sequence
+        for (int num : numSet) {
+            // Check if 'num' is the start of a sequence
+            if (numSet.find(num - 1) == numSet.end()) {
                 int currentNum = num;
-                int length = 1;
+                int currentLength = 1;
 
-                // Check the consecutive sequence length
-                while (hm[currentNum + 1]) {
-                    currentNum++;
-                    length++;
+                // Count the length of the sequence
+                while (numSet.find(currentNum + 1) != numSet.end()) {
+                    currentNum += 1;
+                    currentLength += 1;
                 }
 
                 // Update the maximum length found
-                maxi = max(maxi, length);
+                maxLength = max(maxLength, currentLength);
             }
         }
 
-        return maxi;
+        return maxLength;
     }
 };
