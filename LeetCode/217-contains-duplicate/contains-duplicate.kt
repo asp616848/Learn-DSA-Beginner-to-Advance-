@@ -2,10 +2,11 @@ class Solution {
     fun containsDuplicate(nums: IntArray): Boolean {
         val map = mutableMapOf<Int, Boolean>()
         for (i in nums){
-            if(map.containsKey(i)){
+            if(map.get(i) == true){
                 return true
-            }
+            }else{
             map.put(i, true)
+            }
         }
         return false;
     }
