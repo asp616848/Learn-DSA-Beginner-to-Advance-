@@ -4,9 +4,8 @@ class Solution {
         for (i in nums){
             if(map.get(i) == true){
                 return true
-            }else{
-            map.put(i, true)
             }
+            map.put(i, true)
         }
         return false;
     }
