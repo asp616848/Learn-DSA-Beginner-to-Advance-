@@ -11,7 +11,7 @@ public:
     }
 
 private:
-    void recur(vector<string>& res, string seq, int opens, int total) {
+    void recur(vector<string>& res, const string &seq, int opens, int total) {
         
         cout << opens<< " " << total<< " " << num << endl;
         
