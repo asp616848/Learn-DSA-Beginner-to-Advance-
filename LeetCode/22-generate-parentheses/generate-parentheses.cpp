@@ -1,29 +1,35 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
 class Solution {
 public:
-    int num;
     vector<string> generateParenthesis(int n) {
         vector<string> result;
-        num = n;
-        string a = "";
-
-        recur(result, a, 0, 0);
+        string current = "";
+        generate(result, current, 0, 0, n);  // Start with an empty string and 0 open/close counts
         return result;
     }
 
 private:
-    void recur(vector<string>& res, const string &seq, int opens, int total) {
-        
-        cout << opens<< " " << total<< " " << num << endl;
-        
-        if (seq.length() == num * 2) {
-            res.push_back(seq);  // When the sequence reaches length 2n, add it to result
+    // Helper function to generate the parentheses
+    void generate(vector<string>& res, string current, int openCount, int closeCount, int n) {
+        // Base case: if the current string length is 2 * n, it's a valid combination
+        if (current.length() == 2 * n) {
+            res.push_back(current);
             return;
         }
-        if(total < num) {
-            recur(res, seq + "(", opens + 1, total+1);
+
+        // Add an opening parenthesis if we haven't added all of them
+        if (openCount < n) {
+            generate(res, current + "(", openCount + 1, closeCount, n);
         }
-        if(opens > 0) {
-            recur(res, seq + ")", opens - 1, total);
+
+        // Add a closing parenthesis if there are more openings than closings
+        if (closeCount < openCount) {
+            generate(res, current + ")", openCount, closeCount + 1, n);
         }
     }
 };
